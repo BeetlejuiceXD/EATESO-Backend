@@ -22,10 +22,11 @@ app.use(express.json());
 
 // Conexión a MongoDB
 mongoose.connect(process.env.MONGO_URI, {
+  dbName: 'resenas-cafeterias', 
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-.then(() => console.log('✅ Conectado a MongoDB'))
+.then(() => console.log('✅ Conectado a MongoDB en resenas-cafeterias'))
 .catch((err) => console.error('❌ Error de conexión a MongoDB:', err));
 
 // Swagger config
